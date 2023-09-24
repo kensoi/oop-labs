@@ -85,7 +85,55 @@ function AddForm () {
   </div>
 }
 
-function ListWrap () {
+function useSort(array) {
+  const [state, setState] = useState(0);
+
+  function SortButton ({stateID, children}) {
+    const buttonProps = {
+      children: children,
+      onClick: () => setState(stateID),
+      className: stateID === state ? "clicked" : "able"
+    }
+
+    return <button {...buttonProps} />
+  }
+
+  function SortComponent () {
+    return <div className="sort">
+      <h3>
+        Сортировать по:
+      </h3>
+      <div className="list">
+        <SortButton stateID={0}>
+          По имени
+        </SortButton>
+        <SortButton stateID={1}>
+          По номеру карты
+        </SortButton>
+        <SortButton stateID={2}>
+          По средней стоимости
+        </SortButton>
+      </div>
+    </div>
+  }
+
+  function Sort () {
+    switch (state) {
+      case 1:
+        return array.sort(item => item.card)
+      
+      case 2:
+        return array.sort(item => item.currency)
+
+      default:
+        return array
+    }
+  }
+
+  return [Sort(), SortComponent]
+}
+
+function ListWrap ({sortedList}) {
   const context = useContext(ShopContext)
 
   function Client (props) {
@@ -122,7 +170,7 @@ function ListWrap () {
     </div>
   }
 
-  return context.clients.map(
+  return sortedList.map(
     item => <Client>
       {
         item
@@ -152,13 +200,17 @@ function Results () {
 }
 
 function AddClient() {
+  const context = useContext(ShopContext)
+  const [sortedList, SortComponent] = useSort(context.clients)
+
   return <React.Fragment>
     <BackButton />
     <h1>
-      Добавить клиента
+      Список клиентов
     </h1>
     <AddForm />
-    <ListWrap />
+    <SortComponent />
+    <ListWrap sortedList={sortedList}/>
     <Results />
   </React.Fragment>
 }
