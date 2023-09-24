@@ -86,7 +86,7 @@ function AddForm () {
 }
 
 function useSort(array) {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(3);
 
   function SortButton ({stateID, children}) {
     const buttonProps = {
@@ -199,7 +199,7 @@ function Results () {
   const context = useContext(ShopContext)
 
   const count = context.clients.length
-  const currency_sum = context.clients.reduce((partialSum, item) => partialSum + item.currency, 0)
+  const currency_sum = context.clients.reduce((partialSum, item) => partialSum + parseFloat(item.currency), 0)
   const currency_mid = currency_sum / count
 
   return <div className="results">

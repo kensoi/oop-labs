@@ -89,7 +89,7 @@ function AddForm () {
 
 
 function useSort(array) {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(3);
 
   function SortButton ({stateID, children}) {
     const buttonProps = {
@@ -129,8 +129,8 @@ function useSort(array) {
       case 2:
         return array.sort((item1, item2) => item1.status - item2.status)
 
-        case 3:
-          return array.sort((a, b) => {
+      case 3:
+        return array.sort((a, b) => {
             const nameA = a.name.toUpperCase();
             const nameB = b.name.toUpperCase();
             if (nameA > nameB) {
@@ -198,7 +198,7 @@ function Results () {
   const context = useContext(ShopContext)
 
   const count = context.employee.length
-  const sallary_sum = context.employee.reduce((partialSum, item) => partialSum + item.sallary, 0)
+  const sallary_sum = context.employee.reduce((partialSum, item) => partialSum + parseFloat(item.sallary), 0)
   const sallary_mid = sallary_sum / count
 
   return <div className="results">
@@ -217,7 +217,7 @@ function Results () {
 function AddClient() {
   const context = useContext(ShopContext)
   const [sortedList, SortComponent] = useSort(context.employee)
-
+  console.log(sortedList)
   return <React.Fragment>
     <BackButton />
     <h1>
