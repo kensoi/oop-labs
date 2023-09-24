@@ -1,0 +1,171 @@
+import React, { useContext, useState } from "react"
+import "./stylesheet.scss"
+import ShopContext from "../context"
+import { nanoid } from "nanoid"
+
+function BackButton () {
+  const buttonProps = {
+    children: "Назад",
+    onClick: () => {
+      window.location.href = "../"
+    }
+  }
+
+  return <button {...buttonProps} />
+}
+
+function AddForm () {
+  const context = useContext(ShopContext)
+
+  const [formState, setFormState] = useState({
+    name: "",
+    sallary: "",
+    status: 0
+  })
+
+  function handleChange (event) {
+    setFormState(prev=>({
+      ...prev,
+      [event.target.name]: event.target.value
+    }))
+  }
+
+  function handleSubmit (event) {
+    event.preventDefault()
+
+    const item = {
+      name: formState.name,
+      sallary: parseFloat(formState.sallary).toFixed(2),
+      status: parseInt(formState.status),
+      id: nanoid()
+    }
+
+    context.setEmployee(prev => [item, ...prev])
+    setFormState({
+      name: "",
+      sallary: "",
+      status: 0
+    })
+  }
+
+  const nameProps = {
+    type: "text",
+    name: "name",
+    placeholder: "ФИО клиента",
+    value: formState.name,
+    onChange: handleChange
+  }
+
+  const sallaryProps = {
+    type: "text",
+    name: "sallary",
+    placeholder: "Сумма зарплаты в месяц",
+    value: formState.card,
+    onChange: handleChange
+  }
+
+  const statusProps = {
+    type: "text",
+    name: "status",
+    placeholder: "Должность (цифрой)",
+    value: formState.currency === 0 ? "" : formState.currency,
+    onChange: handleChange
+  }
+
+  const submitProps = {
+    type: "submit",
+    value: "Добавить"
+  }
+
+  return <form onSubmit={handleSubmit}>
+    <h3>
+      Форма
+    </h3>
+    <input {...nameProps} />
+    <input {...sallaryProps} />
+    <input {...statusProps} />
+    <input {...submitProps} />
+  </form>
+}
+
+function ListWrap () {
+  const context = useContext(ShopContext)
+
+  function Employee (props) {
+    const item = props.children
+
+    function RemoveItem () {
+      const buttonProps = {
+        children: "Убрать",
+        onClick: () => {
+          const list = context.employee
+          const new_list = list.filter(
+            (item_to_cond, idx) => item_to_cond.id !== item.id
+          )
+          context.setEmployee(() => new_list)
+        }
+      }
+
+      return <button {...buttonProps}/>
+    }
+
+    return <div>
+      <hr />
+      <h4>
+        {
+          item.name
+        }
+      </h4>
+      <hr />
+      <p>
+        Должность (цифрой): <code>{item.status}</code>
+      </p>
+      <p>
+        Ежемесячная зарплата: <code>{item.sallary} руб.</code>
+      </p>
+      <RemoveItem />
+    </div>
+  }
+
+  return context.employee.map(
+    item => <Employee>
+      {
+        item
+      }
+    </Employee>
+  )
+}
+
+function Results () {
+  const context = useContext(ShopContext)
+
+  const count = context.employee.length
+  const sallary_sum = context.employee.reduce((partialSum, item) => partialSum + item.sallary, 0)
+  const sallary_mid = sallary_sum / count
+
+  return <div>
+    <h1>
+      Вывод
+    </h1>
+    <p>
+      Количество: <code>{count}</code>
+    </p>
+    <p>
+      Средняя ЗП (руб/мес): <code>{sallary_mid}</code>
+    </p>
+  </div>
+}
+
+function AddClient() {
+  return <React.Fragment>
+    <BackButton />
+    <h1>
+      Добавить клиента
+    </h1>
+    <AddForm />
+    <ListWrap />
+    <Results />
+  </React.Fragment>
+}
+
+export default AddClient;
