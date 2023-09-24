@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/urfu-oop/static/css/main.f1c95fb7.css",
-    "main.js": "/urfu-oop/static/js/main.fc1683fd.js",
+    "main.js": "/urfu-oop/static/js/main.fe6a4326.js",
     "static/js/787.2da6871d.chunk.js": "/urfu-oop/static/js/787.2da6871d.chunk.js",
     "index.html": "/urfu-oop/index.html",
     "main.f1c95fb7.css.map": "/urfu-oop/static/css/main.f1c95fb7.css.map",
-    "main.fc1683fd.js.map": "/urfu-oop/static/js/main.fc1683fd.js.map",
+    "main.fe6a4326.js.map": "/urfu-oop/static/js/main.fe6a4326.js.map",
     "787.2da6871d.chunk.js.map": "/urfu-oop/static/js/787.2da6871d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1c95fb7.css",
-    "static/js/main.fc1683fd.js"
+    "static/js/main.fe6a4326.js"
   ]
 }
