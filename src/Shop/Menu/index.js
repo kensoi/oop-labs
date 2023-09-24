@@ -18,13 +18,13 @@ function Button (props) {
 }
 
 function AddEmployee () {
-  return <Button link="./add-employee">
+  return <Button link="./shop/add-employee">
     Показать список сотрудников
   </Button>
 }
 
 function AddClient () {
-  return <Button link="./add-client">
+  return <Button link="./shop/add-client">
     Показать список клиентов
   </Button>
 }

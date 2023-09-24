@@ -34,15 +34,15 @@ function Shop () {
 
     const router = createBrowserRouter([
         {
-            path: "/",
+            path: "shop/",
             element: <Menu />,
         },
         {
-            path: "add-employee/",
+            path: "shop/add-employee/",
             element: <AddEmployee />,
         },
         {
-            path: "add-client/",
+            path: "shop/add-client/",
             element: <AddClient />,
         },
     ])

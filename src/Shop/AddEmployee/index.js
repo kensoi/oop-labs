@@ -7,7 +7,7 @@ function BackButton () {
   const buttonProps = {
     children: "Назад",
     onClick: () => {
-      window.location.href = "../"
+      window.location.href = "../shop"
     }
   }
 
