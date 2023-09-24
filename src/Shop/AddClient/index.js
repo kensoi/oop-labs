@@ -75,15 +75,14 @@ function AddForm () {
     value: "Добавить"
   }
 
-  return <form onSubmit={handleSubmit}>
-    <h3>
-      Форма
-    </h3>
-    <input {...nameProps} />
-    <input {...cardProps} />
-    <input {...currencyProps} />
-    <input {...submitProps} />
-  </form>
+  return <div className="add-form">
+    <form onSubmit={handleSubmit}>
+      <input {...nameProps} />
+      <input {...cardProps} />
+      <input {...currencyProps} />
+      <input {...submitProps} />
+    </form>
+  </div>
 }
 
 function ListWrap () {
@@ -107,14 +106,12 @@ function ListWrap () {
       return <button {...buttonProps}/>
     }
 
-    return <div key={item.id}>
-      <hr />
+    return <div key={item.id} className="item">
       <h4>
         {
           item.name
         }
       </h4>
-      <hr />
       <p>
         Дисконтная карта: <code>{item.card}</code>
       </p>
@@ -141,10 +138,10 @@ function Results () {
   const currency_sum = context.clients.reduce((partialSum, item) => partialSum + item.currency, 0)
   const currency_mid = currency_sum / count
 
-  return <div>
-    <h1>
+  return <div className="results">
+    <h3>
       Вывод
-    </h1>
+    </h3>
     <p>
       Количество клиентов: <code>{count}</code>
     </p>

@@ -77,15 +77,14 @@ function AddForm () {
     value: "Добавить"
   }
 
-  return <form onSubmit={handleSubmit}>
-    <h3>
-      Форма
-    </h3>
-    <input {...nameProps} />
-    <input {...sallaryProps} />
-    <input {...statusProps} />
-    <input {...submitProps} />
-  </form>
+  return <div className="add-form">
+    <form onSubmit={handleSubmit}>
+      <input {...nameProps} />
+      <input {...sallaryProps} />
+      <input {...statusProps} />
+      <input {...submitProps} />
+    </form>
+  </div>
 }
 
 function ListWrap () {
@@ -109,14 +108,12 @@ function ListWrap () {
       return <button {...buttonProps}/>
     }
 
-    return <div>
-      <hr />
+    return <div className="item">
       <h4>
         {
           item.name
         }
       </h4>
-      <hr />
       <p>
         Должность (цифрой): <code>{item.status}</code>
       </p>
@@ -143,10 +140,10 @@ function Results () {
   const sallary_sum = context.employee.reduce((partialSum, item) => partialSum + item.sallary, 0)
   const sallary_mid = sallary_sum / count
 
-  return <div>
-    <h1>
+  return <div className="results">
+    <h3>
       Вывод
-    </h1>
+    </h3>
     <p>
       Количество: <code>{count}</code>
     </p>

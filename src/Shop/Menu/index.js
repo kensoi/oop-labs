@@ -19,13 +19,13 @@ function Button (props) {
 
 function AddEmployee () {
   return <Button link="./add-employee">
-    Добавить или посмотреть список сотрудников
+    Показать список сотрудников
   </Button>
 }
 
 function AddClient () {
   return <Button link="./add-client">
-    Добавить или посмотреть список клиентов
+    Показать список клиентов
   </Button>
 }
 
@@ -34,8 +34,10 @@ function Menu() {
     <h1>
       Лабораторная работа №1: "Магазин"
     </h1>
-    <AddEmployee />
-    <AddClient />
+    <div className="menu">
+      <AddEmployee />
+      <AddClient />
+    </div>
   </React.Fragment>
 }
 
