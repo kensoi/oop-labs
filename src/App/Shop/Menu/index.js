@@ -18,13 +18,13 @@ function Button (props) {
 }
 
 function AddEmployee () {
-  return <Button link="./shop/add-employee">
+  return <Button link="https://kensoi.github.io/urfu-oop/shop/add-employee">
     Показать список сотрудников
   </Button>
 }
 
 function AddClient () {
-  return <Button link="./shop/add-client">
+  return <Button link="https://kensoi.github.io/urfu-oop/shop/add-client">
     Показать список клиентов
   </Button>
 }

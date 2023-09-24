@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-    RouterProvider,
+    Routes,
+    Route
 } from "react-router-dom";
 
 import ShopContext from "./context";
@@ -32,23 +32,12 @@ function Shop () {
         },
     }
 
-    const router = createBrowserRouter([
-        {
-            path: "urfu-oop/shop/",
-            element: <Menu />,
-        },
-        {
-            path: "urfu-oop/shop/add-employee/",
-            element: <AddEmployee />,
-        },
-        {
-            path: "urfu-oop/shop/add-client/",
-            element: <AddClient />,
-        },
-    ])
-
     return <ShopContext.Provider value={shop}>
-        <RouterProvider router={router} />
+        <Routes>
+            <Route index element={<Menu />} />
+            <Route path="add-employee" element={<AddEmployee />} />
+            <Route path="add-client" element={<AddClient />} />
+        </Routes>
     </ShopContext.Provider>
 }
 

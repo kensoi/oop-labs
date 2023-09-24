@@ -7,7 +7,7 @@ function BackButton () {
   const buttonProps = {
     children: "Назад",
     onClick: () => {
-      window.location.href = "../shop"
+      window.location.href = "https://kensoi.github.io/urfu-oop/shop"
     }
   }
 
@@ -107,7 +107,7 @@ function useSort(array) {
         Сортировать по:
       </h3>
       <div className="list">
-        <SortButton stateID={0}>
+        <SortButton stateID={3}>
           По имени
         </SortButton>
         <SortButton stateID={1}>
@@ -121,15 +121,27 @@ function useSort(array) {
   }
 
   function Sort () {
+    // eslint-disable-next-line
     switch (state) {
       case 1:
-        return array.sort(item => item.sallary)
+        return array.sort((item1, item2) => item1.sallary - item2.sallary)
       
       case 2:
-        return array.sort(item => item.status)
+        return array.sort((item1, item2) => item1.status - item2.status)
 
-      default:
-        return array
+        case 3:
+          return array.sort((a, b) => {
+            const nameA = a.name.toUpperCase();
+            const nameB = b.name.toUpperCase();
+            if (nameA > nameB) {
+              return -1;
+            }
+            if (nameA < nameB) {
+              return 1;
+            }
+          
+            return 0;
+          })
     }
   }
 
@@ -209,7 +221,7 @@ function AddClient() {
   return <React.Fragment>
     <BackButton />
     <h1>
-      Добавить клиента
+      Список сотрудников
     </h1>
     <AddForm />
     <SortComponent />

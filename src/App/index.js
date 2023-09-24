@@ -1,26 +1,23 @@
 import React from "react";
 
 import {
-    createBrowserRouter,
-    RouterProvider,
+    BrowserRouter,
+    Route,
+    Routes,
 } from "react-router-dom";
 
 import Shop from "./Shop"
 import LabHub from "./LabHub";
 
 function App () {
-    const router = createBrowserRouter([
-        {
-            path: "urfu-oop/",
-            element: <LabHub />,
-        },
-        {
-            path: "urfu-oop/shop/",
-            element: <Shop />,
-        }
-    ])
-
-    return <RouterProvider router={router} />
+    return <BrowserRouter>
+        <Routes>
+            <Route path="/urfu-oop/">
+                <Route index element={<LabHub />} />
+                <Route path="shop/*" element={<Shop />} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
 }
 
 export default App
