@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/urfu-oop/static/css/main.7bfbe9fb.css",
+    "main.js": "/urfu-oop/static/js/main.b24d13d1.js",
+    "static/js/787.2da6871d.chunk.js": "/urfu-oop/static/js/787.2da6871d.chunk.js",
+    "index.html": "/urfu-oop/index.html",
+    "main.7bfbe9fb.css.map": "/urfu-oop/static/css/main.7bfbe9fb.css.map",
+    "main.b24d13d1.js.map": "/urfu-oop/static/js/main.b24d13d1.js.map",
+    "787.2da6871d.chunk.js.map": "/urfu-oop/static/js/787.2da6871d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bfbe9fb.css",
+    "static/js/main.b24d13d1.js"
+  ]
+}
