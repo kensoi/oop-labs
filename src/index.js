@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Shop from './Shop';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import "./stylesheet.scss"
@@ -8,7 +8,7 @@ import "./stylesheet.scss"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Shop />
+    <App />
   </React.StrictMode>
 );
 

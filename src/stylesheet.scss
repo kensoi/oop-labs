@@ -58,6 +58,25 @@ body {
         width: 100%!important;
     }
 }
+.fragment {
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 640px;
+    margin: 0 auto 8px;
+
+    h3 {
+        padding: 8px 12px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        font-size: 24px;
+    }
+    p {
+        padding: 8px 12px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
 
 .sort {
     background: #fff;
