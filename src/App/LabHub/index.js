@@ -27,11 +27,11 @@ function Pet() {
     </Button>
 }
 
-// function Bouqet() {
-//     return <Button link="https://kensoi.github.io/urfu-oop/bouqet">
-//         Лаб. работа 2.2 "Букет"
-//     </Button>
-// }
+function Bouqet() {
+    return <Button link="https://kensoi.github.io/urfu-oop/bouqet">
+        Лаб. работа 2.2 "Букет"
+    </Button>
+}
 
 function LabHub() {
     return <React.Fragment>
@@ -41,6 +41,7 @@ function LabHub() {
         <div className="menu">
             <Shop />
             <Pet />
+            {/* <Bouqet /> */}
         </div>
     </React.Fragment>
 }

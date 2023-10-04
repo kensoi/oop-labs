@@ -29,12 +29,15 @@ function Says({children}) {
   // children.constructor.name --> название класса
   // источник --> https://stackoverflow.com/questions/10314338/get-name-of-object-or-class
 
+  // но так как я использую create-react-app и gh-pages, мне придётся использовать свойство "children.тип", 
+  // дублирующий имя класса специально для production build
+
   // Аргументы согласно ТЗ:
   // children.name --> переменная обьекта name идущая как аргумент конструктора класса
   // children.говорит() --> метод, выводящий 
 
   return <div className="fragment">
-    {children.constructor.name} по кличке {children.Имя} говорит "{children.говорит()}"
+    {children.тип} по кличке {children.Имя} говорит "{children.говорит()}"
   </div>
 }
 

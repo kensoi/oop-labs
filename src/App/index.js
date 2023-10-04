@@ -8,6 +8,7 @@ import {
 
 import Shop from "./Shop"
 import Pet from "./Pet"
+import Bouqet from "./Bouqet"
 import LabHub from "./LabHub";
 
 function App () {
@@ -17,6 +18,7 @@ function App () {
                 <Route index element={<LabHub />} />
                 <Route path="shop/*" element={<Shop />} />
                 <Route exact path="pet" element={<Pet />} />
+                <Route exact path="bouqet" element={<Bouqet />} />
             </Route>
         </Routes>
     </BrowserRouter>
