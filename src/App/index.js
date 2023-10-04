@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Shop from "./Shop"
+import Pet from "./Pet"
 import LabHub from "./LabHub";
 
 function App () {
@@ -15,6 +16,7 @@ function App () {
             <Route path="/urfu-oop/">
                 <Route index element={<LabHub />} />
                 <Route path="shop/*" element={<Shop />} />
+                <Route exact path="pet" element={<Pet />} />
             </Route>
         </Routes>
     </BrowserRouter>

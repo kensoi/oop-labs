@@ -13,53 +13,34 @@ function Button (props) {
         props.children
       }
     </button>
+  }
+
+function Shop() {
+return <Button link="https://kensoi.github.io/urfu-oop/shop">
+    Лаб. работа 1 "Магазин"
+</Button>
 }
 
-function GithubLink () {
-    return <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Shop">
-        Исходник
+function Pet() {
+    return <Button link="https://kensoi.github.io/urfu-oop/pet">
+        Лаб. работа 2.1 "Питомец"
     </Button>
 }
 
-function PagesLink () {
-    return <Button link="https://kensoi.github.io/urfu-oop/shop/">
-        Результат
-    </Button>
-}
+// function Bouqet() {
+//     return <Button link="https://kensoi.github.io/urfu-oop/bouqet">
+//         Лаб. работа 2.2 "Букет"
+//     </Button>
+// }
 
 function LabHub() {
     return <React.Fragment>
         <h1>
-            Лабораторная работа №1 "Магазин"
-        </h1>
-        <div className="fragment">
-            <h3>
-                Задание (в кратце)
-            </h3>
-            <p>
-                Создать программу, иллюстрирующую навыки программирования.
-            </p>
-            <p>
-                В программе должны быть:
-            </p>
-            <ol>
-                <li>
-                    Ввод сотрудников, клиентов из файла (Базы данных, клавиатуры)
-                </li>
-                <li>
-                    Сортировка
-                </li>
-                <li>
-                    Вывод сотрудников, клиентов на экран.
-                </li>
-            </ol>
-        </div>
-        <h1>
-            Полезные ссылки
+            Лабораторные работы по ООП
         </h1>
         <div className="menu">
-            <GithubLink />
-            <PagesLink />
+            <Shop />
+            <Pet />
         </div>
     </React.Fragment>
 }
