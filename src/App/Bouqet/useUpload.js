@@ -1,5 +1,6 @@
 import { useState } from "react"
 import * as XLSX from 'xlsx';
+import { Flower } from "./bouqet"
 
 function useUpload () {
     const [table, setTable] = useState(null)
@@ -16,8 +17,10 @@ function useUpload () {
         })
 
         jsonData.shift()
-
-        setTable(jsonData)
+        
+        const flowerList = jsonData.map(item => new Flower(...item))
+        
+        setTable(flowerList)
     }
     return [
         table, <div className="fragment">

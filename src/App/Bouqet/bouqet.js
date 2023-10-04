@@ -1,14 +1,18 @@
 class Flower {
+    id
     name
     color
     length
     price
+    count
 
-    constructor (name, color, length, price) {
+    constructor (id, name, color, length, price, count) {
+        this.id = id
         this.name = name
         this.color = color
         this.length = length
         this.price = price
+        this.count = count
     }
 }
 
@@ -24,8 +28,8 @@ class Bouqet {
         return this.#flowerList
     }
 
-    addFlower (name, color, length, price) {
-        const flower = Flower(name, color, length, price)
+    addFlower (id, name, color, length, price, count) {
+        const flower = Flower(id, name, color, length, price, count)
         this.#flowerList.push(flower)
     }
 }

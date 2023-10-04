@@ -1,5 +1,5 @@
 import useUpload from "./useUpload"
-// import { Flower, Bouqet as BouqetObj } from "./bouqet"
+import useFilter from "./useFilter"
 import "./stylesheet.scss"
 
 function Button (props) {
@@ -26,34 +26,28 @@ function GoToSource () {
 }
 
 function FlowerBlock(item) {
-  const ID = item[0]
-  const name = item[1]
-  const color = item[2]
-  const length = item[3]
-  const price = item[4]
-  const count = item[5]
 
   return <div className="flower-item">
     <h4>
-      {name} ({color})
+      {item.name} ({item.color})
     </h4>
     <i>
       Длина стебля: 
     </i>
     <b>
-      {length}
+      {item.length}
     </b>
     <i>
       Стоимость: 
     </i>
     <b>
-      {price} ₽
+      {item.price} ₽
     </b>
     <i>
       Количество: 
     </i>
     <b>
-      {count} шт.
+      {item.count} шт.
     </b>
   </div>
 }
@@ -68,15 +62,15 @@ function Catalog ({table}) {
 
 function Bouqet() {
     const [table, InputFile] = useUpload();
-
-    console.log(table)
+    const [filteredTable, length, FilterForm] = useFilter(table)
 
     return <>
         <h1>
             Лабораторная работа №2.2 "Букет"
         </h1>
         {InputFile}
-        <Catalog table={table} />
+        {FilterForm}
+        <Catalog table={filteredTable} />
         <GoToSource />
     </>
 }
