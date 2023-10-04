@@ -1,0 +1,26 @@
+.flowers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    background: none!important;
+    padding: 0px!important;
+}
+
+.flower-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+
+    user-select: none;
+
+    h4 {
+        grid-column: 1 / span 2;
+        text-align: center;
+    }
+    b {
+        text-align: right;
+    }
+}

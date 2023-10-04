@@ -41,7 +41,7 @@ function LabHub() {
         <div className="menu">
             <Shop />
             <Pet />
-            {/* <Bouqet /> */}
+            <Bouqet />
         </div>
     </React.Fragment>
 }
