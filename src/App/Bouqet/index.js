@@ -30,7 +30,8 @@ function FlowerBlock(item) {
   const name = item[1]
   const color = item[2]
   const length = item[3]
-  const count = item[4]
+  const price = item[4]
+  const count = item[5]
 
   return <div className="flower-item">
     <h4>
@@ -43,10 +44,16 @@ function FlowerBlock(item) {
       {length}
     </b>
     <i>
+      Стоимость: 
+    </i>
+    <b>
+      {price} ₽
+    </b>
+    <i>
       Количество: 
     </i>
     <b>
-      {count}
+      {count} шт.
     </b>
   </div>
 }
