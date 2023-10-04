@@ -20,6 +20,12 @@
         grid-column: 1 / span 2;
         text-align: center;
     }
+    form {
+        grid-column: 1 / span 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     b {
         text-align: right;
     }

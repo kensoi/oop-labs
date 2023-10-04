@@ -1,6 +1,7 @@
 import useUpload from "./useUpload"
 import useFilter from "./useFilter"
 import "./stylesheet.scss"
+import {useCalc, ItemRange} from "./useCalc"
 
 function Button (props) {
     const buttonProps = {
@@ -26,13 +27,12 @@ function GoToSource () {
 }
 
 function FlowerBlock(item) {
-
   return <div className="flower-item">
     <h4>
       {item.name} ({item.color})
     </h4>
     <i>
-      Длина стебля: 
+      Стебель: 
     </i>
     <b>
       {item.length}
@@ -49,6 +49,7 @@ function FlowerBlock(item) {
     <b>
       {item.count} шт.
     </b>
+    <ItemRange flower={item}/>
   </div>
 }
 
@@ -63,16 +64,18 @@ function Catalog ({table}) {
 function Bouqet() {
     const [table, InputFile] = useUpload();
     const [filteredTable, length, FilterForm] = useFilter(table)
+    const [CalcContext, ResultsForm] = useCalc(filteredTable)
 
-    return <>
+    return <CalcContext>
         <h1>
             Лабораторная работа №2.2 "Букет"
         </h1>
         {InputFile}
         {FilterForm}
         <Catalog table={filteredTable} />
+        {ResultsForm}
         <GoToSource />
-    </>
+    </CalcContext>
 }
 
 export default Bouqet

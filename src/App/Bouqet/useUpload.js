@@ -3,7 +3,7 @@ import * as XLSX from 'xlsx';
 import { Flower } from "./bouqet"
 
 function useUpload () {
-    const [table, setTable] = useState(null)
+    const [table, setTable] = useState([])
 
     async function handleUpload (e) {
         e.preventDefault()
