@@ -48,7 +48,7 @@ function ItemRange ({flower}) {
 }
 
 function useCalc(table) {
-    const resultsForm = table ? <div>
+    const resultsForm = table ? <div className="fragment">
         results
     </div> : <></>
 
