@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { nanoid } from "nanoid"
 
 function useFilter (table) {
     const [length, setLength] = useState('длинная')
@@ -15,13 +16,13 @@ function useFilter (table) {
     const filteredTable = table.filter(item => item.length === length)
 
     return [
-        filteredTable, length, <div className="fragment">
+        filteredTable, length, table.length === 0 ? <></> : <div className="fragment">
             <form>
                 <label>
                     Длина стебля: 
-                    <select onChange={handleSelect}>
+                    <select onChange={handleSelect} defaultValue={length}>
                         {
-                            lengthList.map(item => <option selected={item === length}>
+                            lengthList.map(item => <option key={nanoid()}>
                                 {item}
                             </option>)
                         }

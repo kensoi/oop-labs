@@ -22,6 +22,12 @@ function Button (props) {
   </button>
 }
 
+function BackToHub () {
+  return <Button path="/urfu-oop">
+    Назад
+  </Button>
+}
+
 function AddEmployee () {
   return <Button link="https://kensoi.github.io/urfu-oop/shop/add-employee">
     Показать список сотрудников
@@ -34,23 +40,23 @@ function AddClient () {
   </Button>
 }
 
-function AddList () {
+function GoToSource () {
+  return <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Shop">
+    Исходник
+  </Button>
+}
+
+function Links () {
   return <div className="menu">
     <AddEmployee />
     <AddClient />
-  </div>
-}
-
-function GoToSource () {
-  return <div className="fragment">
-    <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Shop">
-      Исходник
-    </Button>
+    <GoToSource />
   </div>
 }
 
 function Menu() {
-  return <React.Fragment>
+  return <>
+    <BackToHub />
     <h1>
       Лабораторная работа №1 "Магазин"
     </h1>
@@ -76,9 +82,8 @@ function Menu() {
             </li>
         </ol>
     </div>
-    <AddList />
-    <GoToSource />
-  </React.Fragment>
+    <Links />
+  </>
 }
 
 export default Menu;

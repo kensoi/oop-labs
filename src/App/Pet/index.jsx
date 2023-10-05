@@ -22,6 +22,12 @@ function Button (props) {
   </button>
 }
 
+function BackToHub () {
+  return <Button path="/urfu-oop">
+    Назад
+  </Button>
+}
+
 function GoToSource () {
   return <div className="menu">
     <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Pet">
@@ -53,6 +59,7 @@ function Pet() {
     const hybrid = new Гибрид("Бешеный Макс")
 
     return <>
+      <BackToHub />
       <h1>
         Лабораторная работа №2.1: "Питомец"
       </h1>

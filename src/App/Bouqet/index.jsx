@@ -2,6 +2,7 @@ import useUpload from "./useUpload"
 import useFilter from "./useFilter"
 import "./stylesheet.scss"
 import {useCalc, ItemRange} from "./useCalc"
+import { nanoid } from "nanoid"
 
 function Button (props) {
     const buttonProps = {
@@ -23,6 +24,12 @@ function Button (props) {
     </button>
 }
 
+function BackToHub () {
+  return <Button path="/urfu-oop">
+    Назад
+  </Button>
+}
+
 function GoToSource () {
     return <div className="menu">
         <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Bouqet">
@@ -32,7 +39,7 @@ function GoToSource () {
 }
 
 function FlowerBlock(item) {
-  return <div className="flower-item">
+  return <div className="flower-item" key={nanoid()}>
     <h4>
       {item.name} ({item.color})
     </h4>
@@ -69,9 +76,10 @@ function Catalog ({table}) {
 function Bouqet() {
     const [table, InputFile] = useUpload();
     const [filteredTable, length, FilterForm] = useFilter(table)
-    const [CalcContext, ResultsForm] = useCalc(filteredTable)
+    const [CalcContext, ResultsForm] = useCalc(filteredTable, length)
 
     return <CalcContext>
+        <BackToHub />
         <h1>
             Лабораторная работа №2.2 "Букет"
         </h1>

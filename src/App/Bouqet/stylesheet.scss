@@ -12,7 +12,7 @@
     gap: 4px;
     background: white;
     border-radius: 8px;
-    padding: 8px;
+    padding: 12px 16px;
 
     user-select: none;
 
@@ -28,5 +28,18 @@
     }
     b {
         text-align: right;
+    }
+}
+
+label[for=upload] {
+    cursor: pointer;
+    button {
+        touch-action: none;
+        pointer-events: none;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    input[type=file] {
+        display: none;
     }
 }

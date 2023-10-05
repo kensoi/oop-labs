@@ -22,9 +22,25 @@ function useUpload () {
         
         setTable(flowerList)
     }
+
+    if (table.length !== 0) {
+        return [table, <></>]
+    }
+
     return [
         table, <div className="fragment">
-            <input type="file" onInput={handleUpload}/>
+            <p>
+                Перед сборкой нужно загрузить Excel файл с данными о доступных букетах:
+            </p>
+            <p>
+                После загрузки этот блок пропадёт, т.к. в задании не предусмотрен вариант загрузки иной таблицы
+            </p>
+            <label htmlFor="upload">
+                <button>
+                    Загрузить файл
+                </button>
+                <input type="file" id="upload" onInput={handleUpload}/>
+            </label>
         </div>
     ]
 }
