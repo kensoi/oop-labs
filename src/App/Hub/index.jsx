@@ -20,35 +20,44 @@ function Button (props) {
   </button>
 }
 
+function ToKensoi () {
+  return <Button link="https://kensoi.github.io/">
+    На главную
+  </Button>
+}
+
 function Shop() {
 return <Button path="/urfu-oop/shop">
-    Лаб. работа 1 "Магазин"
+    1. "Магазин"
 </Button>
 }
 
 function Pet() {
     return <Button path="/urfu-oop/pet">
-        Лаб. работа 2.1 "Питомец"
+        2.1 "Питомец"
     </Button>
 }
 
 function Bouqet() {
     return <Button path="/urfu-oop/bouqet">
-        Лаб. работа 2.2 "Букет"
+        2.2 "Букет"
     </Button>
 }
 
-function LabHub() {
+function Hub() {
     return <React.Fragment>
+        <ToKensoi />
         <h1>
             Лабораторные работы по ООП
         </h1>
-        <div className="menu">
+        <div className="fragment menu">
             <Shop />
+        </div>
+        <div className="fragment menu">
             <Pet />
             <Bouqet />
         </div>
     </React.Fragment>
 }
 
-export default LabHub
+export default Hub

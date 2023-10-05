@@ -9,13 +9,13 @@ import {
 import Shop from "./Shop"
 import Pet from "./Pet"
 import Bouqet from "./Bouqet"
-import LabHub from "./LabHub";
+import Hub from "./Hub";
 
 function App () {
     return <BrowserRouter>
         <Routes>
             <Route path="/urfu-oop/">
-                <Route index element={<LabHub />} />
+                <Route index element={<Hub />} />
                 <Route path="shop/*" element={<Shop />} />
                 <Route exact path="pet" element={<Pet />} />
                 <Route exact path="bouqet" element={<Bouqet />} />

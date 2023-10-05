@@ -5,7 +5,7 @@ import {
 
 import ShopContext from "./context";
 
-import Menu from "./Menu";
+import Hub from "./Hub";
 import AddEmployee from "./AddEmployee";
 import AddClient from "./AddClient";
 import { useState } from "react";
@@ -34,7 +34,7 @@ function Shop () {
 
     return <ShopContext.Provider value={shop}>
         <Routes>
-            <Route index element={<Menu />} />
+            <Route index element={<Hub />} />
             <Route path="add-employee" element={<AddEmployee />} />
             <Route path="add-client" element={<AddClient />} />
         </Routes>

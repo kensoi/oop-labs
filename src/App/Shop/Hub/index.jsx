@@ -54,7 +54,7 @@ function Links () {
   </div>
 }
 
-function Menu() {
+function Hub() {
   return <>
     <BackToHub />
     <h1>
@@ -86,4 +86,4 @@ function Menu() {
   </>
 }
 
-export default Menu;
+export default Hub;
