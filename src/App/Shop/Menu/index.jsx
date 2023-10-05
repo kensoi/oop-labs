@@ -41,7 +41,7 @@ function AddClient () {
 }
 
 function GoToSource () {
-  return <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Shop">
+  return <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/App/Shop">
     Исходник
   </Button>
 }

@@ -34,14 +34,21 @@ function ItemRange ({flower}) {
                 Minus()
         }
     }
+    if (GetCount(flower) === 0) {
+        return <button onClick={Plus}>
+            Добавить в букет
+        </button>
+    }
 
-    return <form>
-        <input type="button" onClick={handleSubmit} name="minus" value="-" title="убавить" />
-        <b>
-            {GetCount(flower)}
-        </b>
-        <input type="button" onClick={handleSubmit} name="plus" value="+" title="добавить" />
-    </form>
+    return <>
+        <form>
+            <input type="button" onClick={handleSubmit} name="minus" value="-" title="убавить" />
+            <b>
+                {GetCount(flower)} шт.
+            </b>
+            <input type="button" onClick={handleSubmit} name="plus" value="+" title="добавить" />
+        </form>
+    </>
 }
 
 function useCalc(table, selectedLength) {
@@ -120,9 +127,14 @@ function useCalc(table, selectedLength) {
 
     function AddFlowerReaction () {
         if (bouqet.length === 0) {
-            return <p>
-                Чтобы оценить качество и стоимость букета профессиональными оценщиками, добавьте в букет хотя бы один цветок.
-            </p>
+            return <>
+                <h4>
+                    Чтобы оценить качество и стоимость букета профессиональными оценщиками, добавьте в букет хотя бы один цветок.
+                </h4>
+                <p>
+                    При фильтрации длины цветов список в букете сбрасывается
+                </p>
+            </>
         }
     }
 

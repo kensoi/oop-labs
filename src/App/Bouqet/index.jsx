@@ -32,7 +32,7 @@ function BackToHub () {
 
 function GoToSource () {
     return <div className="menu">
-        <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Bouqet">
+        <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/App/Bouqet">
             Исходник
         </Button>
     </div>
@@ -43,12 +43,6 @@ function FlowerBlock(item) {
     <h4>
       {item.name} ({item.color})
     </h4>
-    <i>
-      Стебель: 
-    </i>
-    <b>
-      {item.length}
-    </b>
     <i>
       Стоимость: 
     </i>

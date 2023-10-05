@@ -30,7 +30,7 @@ function BackToHub () {
 
 function GoToSource () {
   return <div className="menu">
-    <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/Pet">
+    <Button link="https://github.com/kensoi/urfu-oop/tree/master/src/App/Pet">
       Исходник
     </Button>
   </div>
