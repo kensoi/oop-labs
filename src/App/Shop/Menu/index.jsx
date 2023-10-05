@@ -6,7 +6,12 @@ function Button (props) {
   const buttonProps = {
     className: "x-button",
     onClick: () => {
-      window.location.href = props.link
+      if (props.link !== undefined) {
+        window.location.href = props.link
+      }
+      else {
+        window.location.pathname = props.path
+      }
     }
   }
 

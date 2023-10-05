@@ -1,34 +1,39 @@
 import React from "react";
 
 function Button (props) {
-    const buttonProps = {
-      className: "x-button",
-      onClick: () => {
+  const buttonProps = {
+    className: "x-button",
+    onClick: () => {
+      if (props.link !== undefined) {
         window.location.href = props.link
       }
-    }
-  
-    return <button {...buttonProps}>
-      {
-        props.children
+      else {
+        window.location.pathname = props.path
       }
-    </button>
+    }
   }
 
+  return <button {...buttonProps}>
+    {
+      props.children
+    }
+  </button>
+}
+
 function Shop() {
-return <Button link="https://kensoi.github.io/urfu-oop/shop">
+return <Button path="/urfu-oop/shop">
     Лаб. работа 1 "Магазин"
 </Button>
 }
 
 function Pet() {
-    return <Button link="https://kensoi.github.io/urfu-oop/pet">
+    return <Button path="/urfu-oop/pet">
         Лаб. работа 2.1 "Питомец"
     </Button>
 }
 
 function Bouqet() {
-    return <Button link="https://kensoi.github.io/urfu-oop/bouqet">
+    return <Button path="/urfu-oop/bouqet">
         Лаб. работа 2.2 "Букет"
     </Button>
 }

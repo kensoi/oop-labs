@@ -7,7 +7,7 @@ function BackButton () {
   const buttonProps = {
     children: "Назад",
     onClick: () => {
-      window.location.href = "https://kensoi.github.io/urfu-oop/shop"
+      window.location.pathname = "/urfu-oop/shop"
     }
   }
 
