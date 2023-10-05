@@ -89,8 +89,47 @@ function useCalc(table, selectedLength) {
         }
     ]
 
+    function CheckForGood () {
+        function Reaction () {
+            const colorCount = [...new Set(bouqet.map(item => item.color))].length
+            const flowerCount = bouqet.reduce((sum, item) => sum + item.count, 0)
+
+            if (colorCount === 1 || flowerCount <= 3) {
+                return "Букет хороший"
+            }
+            
+            return "Букет плохой"
+        }
+
+        if (bouqet.length !== 0) {
+            return <h3>
+            Оценка букета: <Reaction />
+        </h3>
+        }
+    }
+
+    function CheckForCost () {
+        const flowerCost = bouqet.reduce((sum, item) => sum + item.count * item.price, 0)
+
+        if (bouqet.length !== 0) {
+            return <h3>
+                Стоимость букета: {flowerCost}₱
+            </h3>
+        }
+    }
+
+    function AddFlowerReaction () {
+        if (bouqet.length === 0) {
+            return <p>
+                Чтобы оценить качество и стоимость букета профессиональными оценщиками, добавьте в букет хотя бы один цветок.
+            </p>
+        }
+    }
+
     const resultsForm = table.length !== 0 ? <div className="fragment">
-        {bouqet.length}
+        <AddFlowerReaction />
+        <CheckForGood />
+        <CheckForCost />
     </div> : <></>
 
     function useContextHook({children}) {
